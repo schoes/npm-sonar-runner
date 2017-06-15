@@ -2,11 +2,11 @@
   "name": "sonar-runner",
   "version": "1.0.0",
   "description": "",
-  "main": "./lib/index.js",
+  "main": "./bin/sonar-runner.js",
   "bin": {
     "sonar": "./bin/sonar-runner.js"
   },
   "preferGlobal": "true",
-  "author": "",
+  "author": "Jason Conway-Williams <jasonconwaywilliams@gmail.com>",
   "license": "ISC"
 }

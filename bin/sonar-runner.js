@@ -10,18 +10,20 @@ var pjson = require(path.resolve(appRoot, 'package.json'));
 
 var sonarProps = pjson.sonar;
 
-var execSonarScanner = function (command) {
+/**
+ * Execute the sonar-scanner command.
+ * @param command an Array containing the sonar-scanner command and props.
+ */
+function execSonarScanner(command) {
 
     var sonarScannerFile = isWin? 'sonar-scanner.bat' : 'sonar-scanner';
     var sonarCommand = path.resolve(__dirname, './../lib/sonar-scanner/bin/' + sonarScannerFile);
     var projectBaseDir = '-Dsonar.projectBaseDir=' + appRoot;
-    console.log(sonarCommand)
+
     command.unshift(projectBaseDir);
     command.unshift(sonarCommand);
 
-    // console.log(command.join(' '));
-
-    var sys = require('sys')
+    var sys = require('sys');
     var exec = require('child_process').exec;
 
     exec(command.join(' '), function (error, stdout, stderr) {
@@ -33,13 +35,13 @@ var execSonarScanner = function (command) {
     });
 }
 
-
+//Execute the sonar-scanner command specifying the location of the props file.
 if (fs.existsSync(prosFile)) {
-    // Do something
     execSonarScanner(['-Dproject.settings=' + path.resolve(appRoot, 'sonar-project.properties')])
 
 } else {
 
+    //Execute the sonar-scanner command specifying the props as command line args.
     if (sonarProps !== null || sonarProps !== undefined) {
 
         var acceptedParams = [
@@ -85,7 +87,12 @@ if (fs.existsSync(prosFile)) {
             'analysis.mode'
         ];
 
-        var paramIsValid = function (param) {
+        /**
+         * Check whether the acceptedParams array contains the provided param.
+         * @param param
+         * @returns {boolean}
+         */
+        function paramIsValid(param) {
             for (var i = 0; i < acceptedParams.length; i++) {
                 if (acceptedParams[i] === param) {
                     return true;
@@ -102,9 +109,6 @@ if (fs.existsSync(prosFile)) {
             }
         }
 
-        execSonarScanner(cmdProps)
-        // console.log('sonar-scanner ' + cmdProps.join(' '))
-
-        // node_modules/sonar-runner/lib/sonar-scanner-3.0.3.778/bin/sonar-scanner -Dsonar.host.url=https:localhost:9001 -Dsonar.projectKey=TSM-CHR -Dsonar.projectName=TSM-Carhire-Results -Dsonar.projectVersion=0.0.1 -Dsonar.login=admin -Dsonar.password=admin -Dsonar.links.scm=git@github.com:jasonconway-williams/npm-sonar-runner.git -Dsonar.language=js -Dsonar.sources=index.js
+        execSonarScanner(cmdProps);
     }
 }

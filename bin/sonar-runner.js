@@ -2,8 +2,8 @@
 
 var path = require('path');
 var fs = require('fs');
-var theFile = path.resolve(__dirname, 'package.json');
-console.log(process.cwd());
+var theFile = path.resolve(process.cwd(), 'package.json');
+console.log(theFile);
 var pjson = require(theFile);
 
 var sonarProps = pjson.sonar;

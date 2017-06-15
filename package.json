@@ -3,11 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "./lib/index.js",
-  "directories": {
-    "lib": "lib"
-  },
   "bin": {
-    "sonar-runner": "bin/sonar-runner.js"
+    "sonar": "./bin/sonar-runner.js"
   },
   "preferGlobal": "true",
   "author": "",

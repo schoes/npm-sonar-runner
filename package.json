@@ -3,10 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "main": "./bin/sonar-runner.js",
+  "homepage": "https://github.com/jasonconway-williams/npm-sonar-runner",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jasonconway-williams/npm-sonar-runner.git"
+  },
   "bin": {
     "sonar": "./bin/sonar-runner.js"
   },
+  "bugs": {
+    "url": "https://github.com/jasonconway-williams/npm-sonar-runner/issues"
+  },
+  "keywords": [
+    "sonar",
+    "sonar-runner",
+    "sonar-scanner"
+  ],
   "preferGlobal": "true",
   "author": "Jason Conway-Williams <jasonconwaywilliams@gmail.com>",
-  "license": "ISC"
+  "license": "MIT"
 }

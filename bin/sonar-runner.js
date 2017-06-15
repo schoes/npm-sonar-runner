@@ -59,7 +59,7 @@ if (sonarProps !== null || sonarProps !== undefined) {
         }
     }
 
-    console.log('sonar-scanner ' + cmdProps.concat(' '))''
+    console.log('sonar-scanner ' + cmdProps.concat(' '))
 
 //-Dsonar.projectKey=myproject -Dsonar.sources=src1
 }

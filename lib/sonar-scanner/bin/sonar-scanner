@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # SonarQube Scanner Startup Script for Unix
 #

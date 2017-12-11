@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env/bash
 #
 # SonarQube Runner Startup Script for Unix
 #

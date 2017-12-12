@@ -63,7 +63,7 @@ project_home=$(pwd)
 #echo "Info: Using classpath $jar_file"
 #echo "Info: Using project $project_home"
 
-bash exec "$java_cmd" \
+"$java_cmd" \
   -Djava.awt.headless=true \
   $SONAR_SCANNER_OPTS \
   $SONAR_SCANNER_DEBUG_OPTS \
